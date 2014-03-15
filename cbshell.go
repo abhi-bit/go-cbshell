@@ -71,15 +71,15 @@ func performOp(url string, cmdString []string) error {
 	case "delete":
 		key := cmdString[1]
 		return bucket.Delete(key)
-	case "nodes":
-        for i := 0; i < len(bucket.NodesJSON); i++ {
-            hostname := bucket.NodesJSON[i].Hostname
-            //stats := bucket.NodesJSON[i].InterestingStats
-            OS := bucket.NodesJSON[i].OS
-            uptime := bucket.NodesJSON[i].Uptime
-            version := bucket.NodesJSON[i].Version
-            fmt.Println("H:", hostname, "OS:", OS, "UP:", uptime, "V:", version)
-        }
+	case "cstats":
+		for i := 0; i < len(bucket.NodesJSON); i++ {
+			hostname := bucket.NodesJSON[i].Hostname
+			//stats := bucket.NodesJSON[i].InterestingStats
+			OS := bucket.NodesJSON[i].OS
+			uptime := bucket.NodesJSON[i].Uptime
+			version := bucket.NodesJSON[i].Version
+			fmt.Println("H:", hostname, "OS:", OS, "UP:", uptime, "V:", version)
+		}
 	case "help":
 		Usage()
 	default:
@@ -94,5 +94,6 @@ func Usage() {
 	fmt.Println("Available commands:\n",
 		"Set <key-name> <TTL> <value>\n",
 		"Get <key-name>\n",
-		"Delete <key-name>\n")
+		"Delete <key-name>\n",
+		"cstats")
 }

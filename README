@@ -18,9 +18,12 @@ cbshell> Set key 0 val
 cbshell> Get key
 val
 cbshell> Delete key
+cbshell> cstats
+H: 192.168.56.1:8091 OS: i386-apple-darwin11.4.2 UP: 281179 V: 2.5.0-1059-rel-enterprise
 cbshell> help
 Available commands:
   Set <key-name> <TTL> <value>
   Get <key-name>
   Delete <key-name>
+  cstats
 ```
