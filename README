@@ -1,0 +1,26 @@
+go-cbshell
+==========
+
+Shell to interact with Couchbase Server
+
+```
+ $ ./cbshell -h
+ Usage of ./cbshell:
+   -b="default": bucket to connect
+   -s="http://localhost:8091": couchbase server url to connect
+```
+
+How to play around with cbshell:
+-------------------------------
+
+```
+cbshell> Set key 0 val
+cbshell> Get key
+val
+cbshell> Delete key
+cbshell> help
+Available commands:
+  Set <key-name> <TTL> <value>
+  Get <key-name>
+  Delete <key-name>
+```
