@@ -10,6 +10,7 @@ import (
 	"github.com/sbinet/liner"
 )
 
+//HandleInteractiveMode handles user inputs
 func HandleInteractiveMode(url, prompt string) {
 
 	// Grab HOME environment variable
@@ -30,7 +31,7 @@ func HandleInteractiveMode(url, prompt string) {
 	go signalCatcher(liner)
 
 	for {
-		line, err := liner.Prompt(prompt + "> ")
+		line, err := liner.Prompt(prompt + "cbshell> ")
 		if err != nil {
 			break
 		}
@@ -40,7 +41,7 @@ func HandleInteractiveMode(url, prompt string) {
 		}
 
 		UpdateHistory(liner, homeDir, line)
-		err = execute_internal(url, line, os.Stdout)
+		err = executeInternal(url, line, os.Stdout)
 		if err != nil {
 			clog.Error(err)
 		}
